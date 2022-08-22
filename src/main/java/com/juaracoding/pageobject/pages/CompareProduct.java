@@ -20,7 +20,7 @@ public class CompareProduct {
 	@FindBy(xpath = "//div[@class='noo-product-item noo-product-sm-4 not_featured post-1497 product type-product status-publish has-post-thumbnail product_cat-t-shirt product_tag-t-shirt product_tag-women has-featured first instock shipping-taxable purchasable product-type-variable']//a[@class='compare button'][normalize-space()='Compare']")
 	private WebElement choiceItemOne;
 	
-	@FindBy(className = "button product_type_variable add_to_cart_button")
+	@FindBy(xpath = "//a[@aria-label='Select options for “pink drop shoulder oversized t shirt”']")
 	private WebElement selectItem;
 	
 	@FindBy(xpath = "//h1[@class='page-title']")

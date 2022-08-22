@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -39,38 +40,38 @@ public class TestMain {
 	}
 
 //	TEST REGISTER
-//	@Test
-//	public void testRegister() {
-//		register.clickMyAccount();
-//		register.register("henditest", "koyago1476@yubua.com", "TestingUjian14");
-//
-//	}
-//
-//	@Test
-//	public void testiInvalidRegister() {
-//		register.clickMyAccount();
-//		register.register("", "", "");
-//		assertEquals(register.msgInvalidRegister(), "Error:");
-//	}
-//
-////	TEST LOGIN
-//	@Test
-//	public void testInvalidLogin() {
-//		login.login("henditest", "TestingUjian");
-//		assertEquals(login.msgInvalid(), "The username or password you entered is incorrect. Lost your password?");
-//	}
-//
-//	@Test
-//	public void testEmtyLogin() {
-//		login.login("", "");
-//		assertEquals(login.getTxtEmpty(), "The password field is empty");
-//	}
-//
-//	@Test
-//	public void testvalidaLogin() {
-//		login.login("henditest", "TestingUjian14");
-//		assertEquals(login.getTxtDashboard(), "Hello");
-//	}
+	@Test
+	public void testRegister() {
+		register.clickMyAccount();
+		register.register("henditest", "koyago1476@yubua.com", "TestingUjian14");
+
+	}
+
+	@Test
+	public void testiInvalidRegister() {
+		register.clickMyAccount();
+		register.register("", "", "");
+		assertEquals(register.msgInvalidRegister(), "Error:");
+	}
+
+//	TEST LOGIN
+	@Test
+	public void testInvalidLogin() {
+		login.login("henditest", "TestingUjian");
+		assertEquals(login.msgInvalid(), "The username or password you entered is incorrect. Lost your password?");
+	}
+
+	@Test
+	public void testEmtyLogin() {
+		login.login("", "");
+		assertEquals(login.getTxtEmpty(), "The password field is empty");
+	}
+
+	@Test
+	public void testvalidaLogin() {
+		login.login("henditest", "TestingUjian14");
+		assertEquals(login.getTxtDashboard(), "Hello");
+	}
 
 //	TEST SEARCH
 	@Test
@@ -86,10 +87,10 @@ public class TestMain {
 		scroll(900);
 		compareProduct.compareItemOne();
 		compareProduct.selectItemCompare();
-//		assertEquals(compareProduct.getTxtCompare(), "PINK DROP SHOULDER OVERSIZED T SHIRT");
-//		
-//		scroll(700);
-//		compareProduct.selectColor();
+		assertEquals(compareProduct.getTxtCompare(), "PINK DROP SHOULDER OVERSIZED T SHIRT");
+		
+		scroll(700);
+		compareProduct.selectColor();
 	
 	}
 
@@ -97,7 +98,7 @@ public class TestMain {
 	@AfterClass
 	public void closebrowser() {
 		delay(5);
-		//driver.quit();
+		driver.quit();
 	}
 
 	static void delay(int detik) {
